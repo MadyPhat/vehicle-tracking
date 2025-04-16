@@ -1,0 +1,119 @@
+.simulation-control {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+
+    .controls {
+        width: min(90vw, 300px);
+        .custom-select {
+            border: none;
+            background: rgba(18, 0, 120, 0.467);
+            color: #fff;
+            border-radius: 5px;
+        }
+        .button-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            button {
+                border: none;
+                cursor: pointer;
+                background: rgba(0, 0, 0, 0.142);
+                border-radius: 50%;
+                aspect-ratio: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.2rem;
+                margin: 0;
+
+                &.active {
+                    background: rgba(18, 0, 120, 0.277);
+                    color: #fff;
+                }
+    
+                &:hover {
+                    background: rgba(13, 0, 40, 0.462);
+                }
+    
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+
+    .custom-slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 8px;
+        background: rgba(18, 0, 120, 0.467);
+        border-radius: 2px;
+        outline: none;
+        cursor: pointer;
+        transition: height 0.2s;
+      }
+      
+      .custom-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 12px;
+        width: 12px;
+        background: #150000;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        margin-top: -3px;
+        transition: transform 0.1s;
+      }
+      
+      .custom-slider:hover::-webkit-slider-thumb {
+        transform: scale(1.5);
+      }
+      
+      /* Firefox */
+      .custom-slider::-moz-range-thumb {
+        height: 12px;
+        width: 12px;
+        background: #fff;
+        border: none;
+        border-radius: 50%;
+        transition: transform 0.1s;
+      }
+      
+      .custom-slider:hover::-moz-range-thumb {
+        transform: scale(1.2);
+      }
+      
+      .custom-slider::-webkit-slider-runnable-track {
+        background: rgba(18, 0, 120, 0.467);
+        height: 6px;
+        border-radius: 2
+      }      
+  }
+
+  .leaflet-marker-icon .rotating-marker {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    transform-origin: center !important;
+    transition: transform 0.3s ease-out !important;
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.vehicle-icon img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    transform-style: preserve-3d;
+}

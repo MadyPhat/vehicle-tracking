@@ -1,0 +1,32 @@
+<nav class="simulation-control">
+    <div class="controls">
+        <div class="button-wrapper">
+            <button (click)="isPlaying ? onPause() : onPlay()" [class.active]="isPlaying">
+              <img [src]="isPlaying ? '/assets/icons/pause.svg' : '/assets/icons/play.svg'" alt="">
+            </button>
+            <button (click)="onReset()">
+              <img src="/assets/icons/reset.svg" alt="">
+            </button>
+          
+            <label>Speed:</label>
+            <select class="custom-select" (change)="onSpeedChange($event)">
+              <option value="0.5">0.5x</option>
+              <option value="1" selected>1x</option>
+              <option value="1.5">1.5x</option>
+              <option value="2">2x</option>
+            </select>
+        </div>
+      
+        <input
+          class="custom-slider"
+          type="range"
+          [min]="0"
+          [max]="timestamps.length - 1"
+          [value]="timestamps.indexOf(selectedTime)"
+          (input)="onTimeChange($event)"
+        />
+        <span>{{ selectedTime * 1000 | date:'dd MMM yyyy h:mm:ss a' }}</span>
+        <div><strong>Zoom to a vehicle to see line paths!</strong></div>
+        <div><small>Generated data, might not be visually accurate to the real world!</small></div>
+      </div>
+</nav>
