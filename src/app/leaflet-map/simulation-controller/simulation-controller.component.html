@@ -2,10 +2,10 @@
     <div class="controls">
         <div class="button-wrapper">
             <button (click)="isPlaying ? onPause() : onPlay()" [class.active]="isPlaying">
-              <img [src]="isPlaying ? '/assets/icons/pause.svg' : '/assets/icons/play.svg'" alt="">
+              <img [src]="isPlaying ? 'assets/icons/pause.svg' : 'assets/icons/play.svg'" alt="">
             </button>
             <button (click)="onReset()">
-              <img src="/assets/icons/reset.svg" alt="">
+              <img src="assets/icons/reset.svg" alt="">
             </button>
           
             <label>Speed:</label>
